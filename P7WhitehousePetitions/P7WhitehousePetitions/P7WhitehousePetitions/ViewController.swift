@@ -9,14 +9,14 @@
 import UIKit
 
 class ViewController: UITableViewController {
- var petitions = [Petition]()
+ var petitions = [jsonObject]()
     
     
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
+        let urlString = "https:/swiftjsonapi.herokuapp.com/api/items"
         
         if let url = URL(string: urlString) {
             if let data = try? Data(contentsOf: url) {
@@ -42,15 +42,15 @@ class ViewController: UITableViewController {
         
         let petition = petitions[indexPath.row]
         cell.textLabel?.text = petition.title
-        cell.detailTextLabel?.text = petition.body
+        cell.detailTextLabel?.text = petition.subtitle
         return cell
     }
  
     
     func parse(json: Data) {
         let decoder = JSONDecoder()
-        if let jsonPetitions = try? decoder.decode(Petitions.self, from: json) {
-            petitions = jsonPetitions.results
+        if let theData = try? decoder.decode([jsonObject].self, from: json) {
+            petitions = theData
             tableView.reloadData()
         }
     }

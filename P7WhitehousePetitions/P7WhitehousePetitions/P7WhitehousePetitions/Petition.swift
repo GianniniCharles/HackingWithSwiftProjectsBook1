@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Petition: Codable {
+struct jsonObject: Codable {
     var title: String
-    var body: String
-    var signatureCount: Int
+    var subtitle: String
+    var description: String
 }
