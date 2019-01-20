@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F697D01521F4EF3F00098FE5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F697D01421F4EF3F00098FE5 /* DetailViewController.swift */; };
 		F69AB44E21EE1966009CB09E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69AB44D21EE1966009CB09E /* AppDelegate.swift */; };
 		F69AB45021EE1966009CB09E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69AB44F21EE1966009CB09E /* ViewController.swift */; };
 		F69AB45321EE1966009CB09E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F69AB45121EE1966009CB09E /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F697D01421F4EF3F00098FE5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F69AB44A21EE1966009CB09E /* P7WhitehousePetitions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P7WhitehousePetitions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F69AB44D21EE1966009CB09E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F69AB44F21EE1966009CB09E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				F69AB44D21EE1966009CB09E /* AppDelegate.swift */,
 				F69AB44F21EE1966009CB09E /* ViewController.swift */,
+				F697D01421F4EF3F00098FE5 /* DetailViewController.swift */,
 				F69AB45F21EE1E2B009CB09E /* Petition.swift */,
 				F69AB45121EE1966009CB09E /* Main.storyboard */,
 				F69AB45421EE1969009CB09E /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 				F69AB45021EE1966009CB09E /* ViewController.swift in Sources */,
 				F69AB44E21EE1966009CB09E /* AppDelegate.swift in Sources */,
 				F69AB46021EE1E2B009CB09E /* Petition.swift in Sources */,
+				F697D01521F4EF3F00098FE5 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

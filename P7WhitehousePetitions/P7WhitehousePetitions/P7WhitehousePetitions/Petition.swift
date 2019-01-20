@@ -8,8 +8,9 @@
 
 import Foundation
 
-struct jsonObject: Codable {
+struct JsonObject: Codable {
     var title: String
     var subtitle: String
     var description: String
+    var image: String
 }
