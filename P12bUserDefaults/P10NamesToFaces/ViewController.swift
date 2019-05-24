@@ -1,4 +1,4 @@
-//
+//Codable Way: Note: DO NOT USE USERDEFAULTS FOR PRIVATE INFORMATION: KEYCHAIN should be used instead
 //  ViewController.swift
 //  P10NamesToFaces
 //
