@@ -88,9 +88,19 @@ class ViewController: UIViewController {
     }//end loadLevel()
 
     @objc func letterTapped(btn: UIButton) {
-        currentAnswer.text = currentAnswer.text! + btn.titleLabel!.text!
+        
+        let animation = {
+            self.currentAnswer.text = self.currentAnswer.text! + btn.titleLabel!.text!
+        }
+        UIView.transition(with: currentAnswer, duration: 0.5, options: .transitionCrossDissolve, animations: animation, completion: nil)
+//        currentAnswer.text = currentAnswer.text! + btn.titleLabel!.text!
         activatedButtons.append(btn)
-        btn.isHidden = true
+        UIView.animate(withDuration: 1, delay: 0,
+                       usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options:
+            [], animations: {
+                btn.alpha = 0
+        })
+        
     }
     
     @IBAction func submitTapped(_ sender: Any) {
@@ -120,10 +130,20 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clearTapped(_ sender: Any) {
-        currentAnswer.text = ""
+        
+        let animation = {
+            self.currentAnswer.text = ""
+        }
+        UIView.transition(with: currentAnswer, duration: 0.5, options: .transitionCrossDissolve, animations: animation, completion: nil)
+     
         
         for btn in activatedButtons {
-            btn.isHidden = false
+            
+            UIView.animate(withDuration: 1, delay: 0,
+                           usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options:
+                [], animations: {
+                    btn.alpha = 1
+            })
         }
         activatedButtons.removeAll()
     }
@@ -134,7 +154,11 @@ class ViewController: UIViewController {
         solutions.removeAll(keepingCapacity: true)
         loadLevel()
         for btn in letterButtons {
-            btn.isHidden = false
+            UIView.animate(withDuration: 1, delay: 0,
+                           usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options:
+                [], animations: {
+                    btn.alpha = 1
+            })
         }
     }
     
