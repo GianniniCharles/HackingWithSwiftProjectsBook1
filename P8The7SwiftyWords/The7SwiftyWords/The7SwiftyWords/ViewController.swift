@@ -112,8 +112,14 @@ class ViewController: UIViewController {
             splitAnswers[solutionPosition] = currentAnswer.text!
             answersLabel.text = splitAnswers.joined(separator: "\n")
 
-            currentAnswer.text = ""
-            score += 1
+            self.score += 1
+            let animation = {
+                self.currentAnswer.text = ""
+            }
+            UIView.transition(with: currentAnswer, duration: 0.5, options: .transitionCrossDissolve, animations: animation, completion: nil)
+            
+            
+            
             
             if score % 7 == 0 {
                 let ac = UIAlertController(title: "Well done!", message: "Are you ready for the next level?", preferredStyle: .alert)

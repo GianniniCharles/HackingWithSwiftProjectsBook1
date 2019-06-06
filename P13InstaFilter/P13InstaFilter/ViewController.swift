@@ -20,6 +20,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        imageView.alpha = 0
         
         title = "YACIFP"
     navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(importPicture))
@@ -79,11 +80,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else
         {return}
-        dismiss(animated: true)
+        dismiss(animated: true) {
+            let fadeIn = {
+                self.imageView.alpha = 1
+            }
+             UIView.transition(with: self.imageView, duration: 1.5, options: .transitionCrossDissolve, animations: fadeIn, completion: nil)
+        }
         currentImage = image
         let beginImage = CIImage(image: currentImage)
         currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+        
+       
+        
         applyProcessing()
+       
     }
     
     func applyProcessing() {
